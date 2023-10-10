@@ -1,10 +1,9 @@
-function PokemonCard({ pokemon }) {
-  console.log(pokemon);
+import PropTypes from "prop-types";
 
+function PokemonCard({ pokemon }) {
   //state (état, données)
 
   //comportements (dynamique)
-  //   const pokemon = pokemonlist[1];
   const isScr = pokemon.imgSrc;
 
   //affichage (render)
@@ -28,3 +27,10 @@ function PokemonCard({ pokemon }) {
 }
 
 export default PokemonCard;
+
+PokemonCard.propTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string,
+  }).isRequired,
+};
